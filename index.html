@@ -172,5 +172,34 @@
     }
   }
 </script>
+<video autoplay loop muted playsinline style="position: fixed; bottom: 20px; right: 20px; width: 200px; z-index: 1; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.6);">
+  <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  let currentAudio = null;
+
+  function playExclusive(id) {
+    const newAudio = document.getElementById(id);
+
+    if (currentAudio && currentAudio !== newAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+
+    if (newAudio.paused) {
+      newAudio.play();
+      currentAudio = newAudio;
+    }
+  }
+
+  function pauseAudio(id) {
+    const audio = document.getElementById(id);
+    if (audio) {
+      audio.pause();
+    }
+  }
+</script>
 </body>
 </html>
