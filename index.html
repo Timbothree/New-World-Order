@@ -134,10 +134,24 @@
   let currentAudio = null;
   function playExclusive(id) {
     const newAudio = document.getElementById(id);
+
     if (currentAudio && currentAudio !== newAudio) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
     }
+
+    if (newAudio.paused) {
+      newAudio.play();
+      currentAudio = newAudio;
+    }
+  }
+
+  function pauseAudio(id) {
+    const audio = document.getElementById(id);
+    if (audio) {
+      audio.pause();
+    }
+  }
     if (newAudio) {
       newAudio.currentTime = 0;
       newAudio.play();
