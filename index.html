@@ -51,7 +51,7 @@
 <body>
   <header>
     <img src="Logo.png" alt="Band Logo">
-        <p>Formed: Late 1982<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking</p>
+        <p>Formed: Late 1982<br>Years Active: 1982-1986<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking</p>
   </header>
 
   <section>
@@ -62,7 +62,7 @@
     <button onclick="playExclusive('force-audio')">▶️ Play</button>
     <button onclick="pauseAudio('force-audio')">⏸ Pause</button>
     <audio id="force-audio">
-      <source src="force-of-love.mp3" type="audio/mpeg">
+      <source src="The Force of Love (remix).mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
@@ -70,7 +70,7 @@
     <button onclick="playExclusive('change-audio')">▶️ Play</button>
     <button onclick="pauseAudio('change-audio')">⏸ Pause</button>
     <audio id="change-audio">
-      <source src="dont-try.mp3" type="audio/mpeg">
+      <source src="Don't Try'n Change Me .mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
@@ -78,7 +78,7 @@
     <button onclick="playExclusive('hearts-audio')">▶️ Play</button>
     <button onclick="pauseAudio('hearts-audio')">⏸ Pause</button>
     <audio id="hearts-audio">
-      <source src="hearts-in-motion.mp3" type="audio/mpeg">
+      <source src="_Hearts in Motion.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
@@ -86,7 +86,7 @@
     <button onclick="playExclusive('digital-audio')">▶️ Play</button>
     <button onclick="pauseAudio('digital-audio')">⏸ Pause</button>
     <audio id="digital-audio">
-      <source src="digital-lovers.mp3" type="audio/mpeg">
+      <source src="_Digital Lovers.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
@@ -94,7 +94,7 @@
     <button onclick="playExclusive('echoes-audio')">▶️ Play</button>
     <button onclick="pauseAudio('echoes-audio')">⏸ Pause</button>
     <audio id="echoes-audio">
-      <source src="echoes-of-tomorrow.mp3" type="audio/mpeg">
+      <source src="Echoes of Tomorrow.mp3" type="audio/mpeg">
     </audio>
   </li>
 </ul>
@@ -172,12 +172,17 @@
     }
   }
 </script>
-<video autoplay loop muted playsinline style="position: fixed; bottom: 20px; right: 20px; width: 200px; z-index: 1; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.6);">
-  <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4">
+<video autoplay loop muted playsinline id="bg-video" style="
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3; /* subtle background */
+">
+  <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
-
-<script>
   let currentAudio = null;
 
   function playExclusive(id) {
