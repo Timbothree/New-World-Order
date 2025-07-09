@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=
+"en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New World Order</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       color: #ffffff;
-      font-weight: bold;
       background: url('Website background.jpg') no-repeat center center fixed;
       background-size: cover;
-      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.85);
     }
     header {
       text-align: center;
       padding: 2em;
+      background-color: rgba(0, 0, 0, 0.6);
     }
     header img {
       width: 200px;
@@ -49,19 +51,48 @@
 <body>
   <header>
     <img src="Logo.png" alt="Band Logo">
-   
-    <p>Formed: Late 1982<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking<br>Years Active: 1982-1986</p>
+        <p>Formed: Late 1982<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking</p>
   </header>
 
   <section>
     <h2>Debut Album: "Electric Summer" (1983)</h2>
     <ul class="album-track">
-      <li><a href="https://suno.com/s/6c0AfZHe6J5r0OFS" target="_blank">The Force of Love (remix)</a></li>
-      <li><a href="https://suno.com/s/VXzywzsKhfrGLQoB" target="_blank">Don't Try’n Change Me</a></li>
-      <li><a href="https://suno.com/s/Gq0YKgr3h6lTgNdj" target="_blank">Hearts in Motion</a></li>
-      <li><a href="https://suno.com/s/bA1epHL54AGzvB1G" target="_blank">Digital Lovers</a></li>
-      <li><a href="https://suno.com/s/ulgdr5htvSXF2h7r" target="_blank">Echoes of Tomorrow</a></li>
-    </ul>
+  <li>
+    The Force of Love (remix)
+    <button onclick="document.getElementById('force-audio').play()">▶️ Play</button>
+    <audio id="force-audio">
+      <source src="The Force of Love (remix).mp3" type="audio/mpeg">
+    </audio>
+  </li>
+  <li>
+    Don't Try’n Change Me
+    <button onclick="document.getElementById('change-audio').play()">▶️ Play</button>
+    <audio id="change-audio">
+      <source src="Don't Try'n Change Me .mp3" type="audio/mpeg">
+    </audio>
+  </li>
+  <li>
+    Hearts in Motion
+    <button onclick="document.getElementById('hearts-audio').play()">▶️ Play</button>
+    <audio id="hearts-audio">
+      <source src="_Hearts in Motion.mp3" type="audio/mpeg">
+    </audio>
+  </li>
+  <li>
+    Digital Lovers
+    <button onclick="document.getElementById('digital-audio').play()">▶️ Play</button>
+    <audio id="digital-audio">
+      <source src="_Digital Lovers.mp3" type="audio/mpeg">
+    </audio>
+  </li>
+  <li>
+    Echoes of Tomorrow
+    <button onclick="document.getElementById('echoes-audio').play()">▶️ Play</button>
+    <audio id="echoes-audio">
+      <source src="Echoes of Tomorrow.mp3" type="audio/mpeg">
+    </audio>
+  </li>
+</ul>
   </section>
 
   <section>
@@ -80,14 +111,6 @@
       <li>🎤 <strong>Isabelle Moreau</strong> — Ethereal co-lead vocals and synth enchantress</li>
     </ul>
   </section>
-
-  <section>
-  <h2>Electric Moves</h2>
-  <video autoplay loop muted playsinline width="100%" style="border-radius: 10px; max-width: 600px; display: block; margin: 0 auto;">
-    <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
 
   <section class="merch">
     <h2>Merch</h2>
