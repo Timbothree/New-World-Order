@@ -59,37 +59,42 @@
     <ul class="album-track">
   <li>
     The Force of Love (remix)
-    <button onclick="document.getElementById('force-audio').play()">▶️ Play</button>
+    <button onclick="playExclusive('force-audio')">▶️ Play</button>
+    <button onclick="pauseAudio('force-audio')">⏸ Pause</button>
     <audio id="force-audio">
-      <source src="The Force of Love (remix).mp3" type="audio/mpeg">
+      <source src="force-of-love.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
     Don't Try’n Change Me
-    <button onclick="document.getElementById('change-audio').play()">▶️ Play</button>
+    <button onclick="playExclusive('change-audio')">▶️ Play</button>
+    <button onclick="pauseAudio('change-audio')">⏸ Pause</button>
     <audio id="change-audio">
-      <source src="Don't Try'n Change Me .mp3" type="audio/mpeg">
+      <source src="dont-try.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
     Hearts in Motion
-    <button onclick="document.getElementById('hearts-audio').play()">▶️ Play</button>
+    <button onclick="playExclusive('hearts-audio')">▶️ Play</button>
+    <button onclick="pauseAudio('hearts-audio')">⏸ Pause</button>
     <audio id="hearts-audio">
-      <source src="_Hearts in Motion.mp3" type="audio/mpeg">
+      <source src="hearts-in-motion.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
     Digital Lovers
-    <button onclick="document.getElementById('digital-audio').play()">▶️ Play</button>
+    <button onclick="playExclusive('digital-audio')">▶️ Play</button>
+    <button onclick="pauseAudio('digital-audio')">⏸ Pause</button>
     <audio id="digital-audio">
-      <source src="_Digital Lovers.mp3" type="audio/mpeg">
+      <source src="digital-lovers.mp3" type="audio/mpeg">
     </audio>
   </li>
   <li>
     Echoes of Tomorrow
-    <button onclick="document.getElementById('echoes-audio').play()">▶️ Play</button>
+    <button onclick="playExclusive('echoes-audio')">▶️ Play</button>
+    <button onclick="pauseAudio('echoes-audio')">⏸ Pause</button>
     <audio id="echoes-audio">
-      <source src="Echoes of Tomorrow.mp3" type="audio/mpeg">
+      <source src="echoes-of-tomorrow.mp3" type="audio/mpeg">
     </audio>
   </li>
 </ul>
@@ -125,5 +130,33 @@
     <h2>Contact</h2>
     <p>Email: <a href="mailto:timledfo@gmail.com" style="color: #00ffff;">timledfo@gmail.com</a></p>
   </section>
+<script>
+  let currentAudio = null;
+  function playExclusive(id) {
+    const newAudio = document.getElementById(id);
+    if (currentAudio && currentAudio !== newAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+    }
+    if (newAudio) {
+      newAudio.currentTime = 0;
+      newAudio.play();
+      currentAudio = newAudio;
+    }
+  }
+
+  function pauseAudio(id) {
+    const audio = document.getElementById(id);
+    if (audio) {
+      audio.pause();
+    }
+  }
+    if (newAudio) {
+      newAudio.currentTime = 0;
+      newAudio.play();
+      currentAudio = newAudio;
+    }
+  }
+</script>
 </body>
 </html>
