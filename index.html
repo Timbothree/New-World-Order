@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang=
-"en">
+<!DOCTYPE html> 
+<html lan
+g="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,6 +37,12 @@
       color: #00ffff;
       text-decoration: none;
     }
+    .album-track li {
+      margin-bottom: 1.5em;
+    }
+    .track-buttons {
+      margin-top: 0.5em;
+    }
     .merch img {
       width: 150px;
       margin-right: 1em;
@@ -51,53 +57,63 @@
 <body>
   <header>
     <img src="Logo.png" alt="Band Logo">
-        <p>Formed: Late 1982<br>Years Active: 1982-1986<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking</p>
+    <p>Formed: Late 1982<br>Years Active: 1982-1986<br>Debut Album Release: Summer 1983<br>Genre: Synth-pop / Dance-pop<br>Influences: A-ha, Rick Astley, Pet Shop Boys, Modern Talking</p>
   </header>
 
   <section>
     <h2>Debut Album: "Electric Summer" (1983)</h2>
     <ul class="album-track">
-  <li>
-    The Force of Love (remix)
-    <button onclick="playExclusive('force-audio')">▶️ Play</button>
-    <button onclick="pauseAudio('force-audio')">⏸ Pause</button>
-    <audio id="force-audio">
-      <source src="force-of-love.mp3" type="audio/mpeg">
-    </audio>
-  </li>
-  <li>
-    Don't Try’n Change Me
-    <button onclick="playExclusive('change-audio')">▶️ Play</button>
-    <button onclick="pauseAudio('change-audio')">⏸ Pause</button>
-    <audio id="change-audio">
-      <source src="dont-try-changing-me.mp3" type="audio/mpeg">
-    </audio>
-  </li>
-  <li>
-    Hearts in Motion
-    <button onclick="playExclusive('hearts-audio')">▶️ Play</button>
-    <button onclick="pauseAudio('hearts-audio')">⏸ Pause</button>
-    <audio id="hearts-audio">
-      <source src="hearts-in-motion.mp3" type="audio/mpeg">
-    </audio>
-  </li>
-  <li>
-    Digital Lovers
-    <button onclick="playExclusive('digital-audio')">▶️ Play</button>
-    <button onclick="pauseAudio('digital-audio')">⏸ Pause</button>
-    <audio id="digital-audio">
-      <source src="digital-lovers.mp3" type="audio/mpeg">
-    </audio>
-  </li>
-  <li>
-    Echoes of Tomorrow
-    <button onclick="playExclusive('echoes-audio')">▶️ Play</button>
-    <button onclick="pauseAudio('echoes-audio')">⏸ Pause</button>
-    <audio id="echoes-audio">
-      <source src="echoes-of-tomorrow.mp3" type="audio/mpeg">
-    </audio>
-  </li>
-</ul>
+      <li>
+        The Force of Love (remix)
+        <div class="track-buttons">
+          <button onclick="playExclusive('force-audio')">▶️ Play</button>
+          <button onclick="pauseAudio('force-audio')">⏸ Pause</button>
+        </div>
+        <audio id="force-audio">
+          <source src="force-of-love.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li>
+        Don't Try’n Change Me
+        <div class="track-buttons">
+          <button onclick="playExclusive('change-audio')">▶️ Play</button>
+          <button onclick="pauseAudio('change-audio')">⏸ Pause</button>
+        </div>
+        <audio id="change-audio">
+          <source src="dont-try-changing-me.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li>
+        Hearts in Motion
+        <div class="track-buttons">
+          <button onclick="playExclusive('hearts-audio')">▶️ Play</button>
+          <button onclick="pauseAudio('hearts-audio')">⏸ Pause</button>
+        </div>
+        <audio id="hearts-audio">
+          <source src="hearts-in-motion.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li>
+        Digital Lovers
+        <div class="track-buttons">
+          <button onclick="playExclusive('digital-audio')">▶️ Play</button>
+          <button onclick="pauseAudio('digital-audio')">⏸ Pause</button>
+        </div>
+        <audio id="digital-audio">
+          <source src="digital-lovers.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+      <li>
+        Echoes of Tomorrow
+        <div class="track-buttons">
+          <button onclick="playExclusive('echoes-audio')">▶️ Play</button>
+          <button onclick="pauseAudio('echoes-audio')">⏸ Pause</button>
+        </div>
+        <audio id="echoes-audio">
+          <source src="echoes-of-tomorrow.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+    </ul>
   </section>
 
   <section>
@@ -130,81 +146,42 @@
     <h2>Contact</h2>
     <p>Email: <a href="mailto:timledfo@gmail.com" style="color: #00ffff;">timledfo@gmail.com</a></p>
   </section>
-<script>
-  let currentAudio = null;
-  function playExclusive(id) {
-    const newAudio = document.getElementById(id);
 
-    if (currentAudio && currentAudio !== newAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
+  <script>
+    let currentAudio = null;
 
-    if (newAudio.paused) {
-      newAudio.play();
-      currentAudio = newAudio;
-    }
-  }
+    function playExclusive(id) {
+      const newAudio = document.getElementById(id);
 
-  function pauseAudio(id) {
-    const audio = document.getElementById(id);
-    if (audio) {
-      audio.pause();
-    }
-  }
-    if (newAudio) {
-      newAudio.currentTime = 0;
-      newAudio.play();
-      currentAudio = newAudio;
-    }
-  }
+      if (currentAudio && currentAudio !== newAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
 
-  function pauseAudio(id) {
-    const audio = document.getElementById(id);
-    if (audio) {
-      audio.pause();
-    }
-  }
-    if (newAudio) {
-      newAudio.currentTime = 0;
-      newAudio.play();
-      currentAudio = newAudio;
-    }
-  }
-</script>
-<video autoplay loop muted playsinline id="bg-video" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.3; /* subtle background */
-">
-  <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-  let currentAudio = null;
-
-  function playExclusive(id) {
-    const newAudio = document.getElementById(id);
-
-    if (currentAudio && currentAudio !== newAudio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
+      if (newAudio.paused) {
+        newAudio.play();
+        currentAudio = newAudio;
+      }
     }
 
-    if (newAudio.paused) {
-      newAudio.play();
-      currentAudio = newAudio;
+    function pauseAudio(id) {
+      const audio = document.getElementById(id);
+      if (audio) {
+        audio.pause();
+      }
     }
-  }
+  </script>
 
-  function pauseAudio(id) {
-    const audio = document.getElementById(id);
-    if (audio) {
-      audio.pause();
-    }
-  }
-</script>
+  <video autoplay loop muted playsinline id="bg-video" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3; /* subtle background */
+  ">
+    <source src="Screen_Recording_20250709_131851.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 </body>
 </html>
